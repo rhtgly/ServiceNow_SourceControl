@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Innovate" max_length="40" name="x_884767_innovate_innovate" sizeclass="1" type="collection">
+        <element label="Assigned to" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element label="Description" max_length="500" name="description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="cost_savings" label="Idea type" mandatory="true" max_length="40" name="idea_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Cost Savings" value="cost_savings"/>
+                <element inactive_on_update="false" label="Process Improvement" value="process_improvement"/>
+                <element inactive_on_update="false" label="Team Building" value="team_building"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" default="Not started" label="Review Status" max_length="40" name="review_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Not started" sequence="1" value="Not started"/>
+                <element inactive_on_update="false" label="In progress" sequence="2" value="In progress"/>
+                <element inactive_on_update="false" label="Reviewed" sequence="3" value="Reviewed"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Short description" mandatory="true" max_length="125" name="short_description" type="string"/>
+        <index name="index">
+            <element name="assigned_to"/>
+        </index>
+    </element>
+</database>
